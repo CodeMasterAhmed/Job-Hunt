@@ -20,20 +20,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const allowedOrigins = ['https://job-hunt-k9q7.vercel.app/'];
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
-};
-app.use(cors(corsOptions));
-
-app.options('*', cors(corsOptions)); // Preflight request for all routes
+app.use(cors({
+    origin: '*',
+    credentials: true
+}));
 
 // API routes
 app.use("/api/v1/user", userRoute);
