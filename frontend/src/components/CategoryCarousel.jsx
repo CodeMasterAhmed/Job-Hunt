@@ -10,7 +10,11 @@ const category = [
     "Backend Developer",
     "Data Science",
     "Graphic Designer",
-    "FullStack Developer"
+    "FullStack Developer",
+    "DevOps Engineer",
+    "Game Developer",
+    "Software Engineer",
+    "Cloud Architect"
 ]
 
 const CategoryCarousel = () => {
@@ -27,7 +31,7 @@ const CategoryCarousel = () => {
                 <CarouselContent>
                     {
                         category.map((cat, index) => (
-                            <CarouselItem className="md:basis-1/2 lg-basis-1/3">
+                            <CarouselItem className="md:basis-1/3 lg-basis-1/3">
                                 <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full">{cat}</Button>
                             </CarouselItem>
                         ))
