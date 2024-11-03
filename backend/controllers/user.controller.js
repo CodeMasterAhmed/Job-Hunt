@@ -169,3 +169,10 @@ export const updateProfile = async (req, res) => {
         console.log(error);
     }
 }
+
+
+export const test = (req, res) => {
+    res.json({
+        message:"hello"
+    })
+}
