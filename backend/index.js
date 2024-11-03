@@ -22,8 +22,7 @@ app.use(cookieParser());
 
 app.use(cors({
     origin: 'https://job-hunt-k9q7.vercel.app',
-    credentials: true,
-    optionSuccessStatus:200
+    credentials: true
 }));
 
 
