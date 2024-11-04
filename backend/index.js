@@ -21,10 +21,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://job-hunt-k9q7.vercel.app',
+    origin: (origin, callback) => {
+        const allowedOrigins = ['https://job-hunt-k9q7.vercel.app', 'http://localhost:3000'];
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 // API routes
 app.use("/api/v1/user", userRoute);
