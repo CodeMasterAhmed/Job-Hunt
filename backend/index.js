@@ -21,14 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: (origin, callback) => {
-        const allowedOrigins = ['https://job-hunt-k9q7.vercel.app', 'http://localhost:3000'];
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: 'https://job-hunt-k9q7.vercel.app',
     credentials: true
 }));
 
