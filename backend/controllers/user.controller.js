@@ -173,6 +173,6 @@ export const updateProfile = async (req, res) => {
 
 export const test = (req, res) => {
     res.json({
-        message:"hello"
+        message:"hello world"
     })
 }
