@@ -24,15 +24,10 @@ app.use(cors({
     origin: 'https://job-hunt-k9q7.vercel.app'
 }));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
 // API routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicationRoute);
 
-export default app;
+module.exports = app;
