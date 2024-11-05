@@ -21,8 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://job-hunt-k9q7.vercel.app',
-    credentials: true
+    origin: 'https://job-hunt-k9q7.vercel.app'
 }));
 
 // API routes
