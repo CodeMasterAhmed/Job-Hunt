@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://job-hunt-k9q7.vercel.app'
+    origin: ['https://job-hunt-k9q7.vercel.app', 'http://localhost:5173']
 }));
 
 // API routes
